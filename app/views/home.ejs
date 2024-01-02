@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Rota Principal do Album de Fotos</title>
+</head>
+<body>
+       <div>
+        <h1>***** Album *****</h1>
+        <div><a href="/">Home</a></div>
+        <div><a href="/login">Login</a></div>
+        <div><a href="/inserirFoto">Inserir Foto</a></div>
+     <div>
+            <% for (let i=0; i<fotos.length; i++) { %>
+                <div class="card">
+                    <img src = "<%= fotos[i].urlfoto %>"
+                    class="card-image" alt="<%= fotos[i].nome %>">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                                           
+
+                        <p class="card-text">
+                            <%= fotos[i].artista %>
+                        </p>
+                    </div>
+                </div>
+                <hr/>
+            <% } %>
+        </div>   
+    </div>
+</body>
+</html>

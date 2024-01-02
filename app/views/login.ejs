@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<title>Formulário de Autenticação</title>
+</head>
+
+<body>
+    <div><a href="/">Home</a></div>
+    <section class="errors">
+        <% if(errors) { %>
+            <ul>
+                <% for(let i = 0; i < errors.length; i++){ %>
+                    <li>
+                        <%= errors[i].msg %>
+                    </li>
+                <% } %>
+            </ul>
+        <% } %>
+    </section> 
+	<h1>Formulário de Login</h1>
+	<form action="/autenticar" method="post">
+		<input type="text" name="nome" value= "<%= user.nome %>" placeholder="Digite o nome da usuário" >
+		<input type="text" name="password" value= "<%= user.password %>" placeholder="Digite o password" >
+		<input type="submit" value="enviar">
+	</form>
+    
+</body>
+
+</html>

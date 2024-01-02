@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Formulário de Inclusão de Foto</title>
+</head>
+
+<body>
+    <div><a href="/">Home</a></div>
+    <section class="errors">
+        <% if(errors) { %>
+            <ul>
+                <% for(let i = 0; i < errors.length; i++){ %>
+                    <li>
+                        <%= errors[i].msg %>
+                    </li>
+                <% } %>
+            </ul>
+        <% } %>
+    </section> 
+	<h1>Formulário para inclusão de Foto</h1>
+	<form action="/salvarFoto" method="post">
+		<input type="text" name="nome" value= "<%= foto.nome %>" placeholder="Digite o nome da foto" >
+		<input type="text" name="artista" value= "<%= foto.artista %>" placeholder="Digite o nome do artista" >
+		<input type="text" name="urlfoto" value= "<%= foto.urlfoto %>" placeholder="Digite a url da foto">
+		<input type="submit" value="enviar">
+	</form>
+    
+</body>
+
+</html>
